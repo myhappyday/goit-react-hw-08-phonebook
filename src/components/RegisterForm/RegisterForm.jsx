@@ -42,18 +42,15 @@ const RegisterForm = () => {
       })
     );
 
-
     // const data = new FormData(event.currentTarget);
 
     // const name = data.get('fullName');
     // const email = data.get('email');
     // const password = data.get('password');
 
-    console.log("name:", name);
-    console.log("email:", email);
-    console.log("password:", password);
-
-
+    console.log('name:', name);
+    console.log('email:', email);
+    console.log('password:', password);
 
     if (name === '' || email === '' || password === '') {
       setOpenSnackbar(true);
@@ -137,7 +134,7 @@ const RegisterForm = () => {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"               
+                autoComplete="current-password"
               />
 
               <Grid item xs={12}>
