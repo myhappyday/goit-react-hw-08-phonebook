@@ -28,25 +28,26 @@ const RegisterForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const form = event.currentTarget;
+    // const form = event.currentTarget;
+    // console.log('form: ', form);
 
-    const name = form.elements.userName.value;
-    const email = form.elements.userEmail.value;
-    const password = form.elements.userPassword.value;
+    // const name = form.elements.userName.value;
+    // const email = form.elements.userEmail.value;
+    // const password = form.elements.userPassword.value;
 
-    dispatch(
-      userRegister({
-        name,
-        email,
-        password,
-      })
-    );
+    // dispatch(
+    //   userRegister({
+    //     name,
+    //     email,
+    //     password,
+    //   })
+    // );
 
-    // const data = new FormData(event.currentTarget);
+    const data = new FormData(event.currentTarget);
 
-    // const name = data.get('fullName');
-    // const email = data.get('email');
-    // const password = data.get('password');
+    const name = data.get('fullName');
+    const email = data.get('email');
+    const password = data.get('password');
 
     console.log('name:', name);
     console.log('email:', email);
@@ -56,6 +57,8 @@ const RegisterForm = () => {
       setOpenSnackbar(true);
       return;
     }
+
+    // dispatch(userRegister({ name, email, password }));
 
     dispatch(userRegister({ name, email, password })).then(
       ({ meta: { rejectedWithValue } }) => {
@@ -152,7 +155,7 @@ const RegisterForm = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item>

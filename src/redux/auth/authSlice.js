@@ -9,8 +9,8 @@ import {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    userData: null,
-    // user: { name: null, email: null },
+    // userData: null,
+    user: { name: null, email: null },
     token: null,
     isLogged: false,
     // isRefreshing: false,
@@ -21,12 +21,13 @@ const authSlice = createSlice({
     builder
       .addCase(userRegister.pending, state => {
         state.isLoading = true;
+        state.error = null;
+        // state.isLogged = false;
       })
       .addCase(userRegister.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLogged = true;
-
         state.isLoading = false;
         state.error = null;
       })
@@ -37,12 +38,12 @@ const authSlice = createSlice({
 
       .addCase(userLogIn.pending, state => {
         state.isLoading = true;
+        state.error = null;
       })
       .addCase(userLogIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLogged = true;
-
         state.isLoading = false;
         state.error = null;
       })
