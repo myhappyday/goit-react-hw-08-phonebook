@@ -7,10 +7,10 @@ const Loader = () => {
       <Oval
         height={100}
         width={100}
-        color="rgba(185, 183, 240, 0.8)"
+        color="rgba(63, 81, 181, 0.6)"
         visible={true}
         ariaLabel="oval-loading"
-        secondaryColor="rgba(185, 183, 240, 0.8)"
+        secondaryColor="rgba(63, 81, 181, 0.6)"
         strokeWidth={5}
         strokeWidthSecondary={5}
       />

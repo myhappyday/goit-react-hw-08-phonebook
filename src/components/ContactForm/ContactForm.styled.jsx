@@ -5,7 +5,8 @@ export const Form = styled.form`
   flex-direction: column;
   width: auto;
   padding: 20px 10px;
-  border: 1px solid #333;
+  border: 1px solid #212121;
+  border-radius: 4px;
 `;
 
 export const Label = styled.label`
@@ -17,7 +18,8 @@ export const Label = styled.label`
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :focus-within {
-    color: rgba(15, 7, 238, 0.8);
+    color: #3f51b5
+    // color: rgba(15, 7, 238, 0.8);
   }
 `;
 
@@ -26,8 +28,8 @@ export const Input = styled.input`
   height: 36px;
   font-size: 16px;
   line-height: 1.16;
-  background-color: inherit;
-  color: rgb(15, 7, 238);
+  // background-color: inherit;
+  color: #3f51b5;
   margin-top: 8px;
   padding-left: 12px;
   border: 1px solid rgb(191, 192, 192);
@@ -36,30 +38,35 @@ export const Input = styled.input`
 
   :focus {
     outline: transparent;
-    box-shadow: rgba(15, 7, 238, 0.8) 0px 0px 3px 1px;
+    border: 1px solid #3f51b5
+    // box-shadow: rgba(63, 81, 181, 0.8) 0px 0px 3px 1px;
   }
 
   :focus + label {
-    color: rgb(15, 7, 238);
+    color: #3f51b5;
   }
 `;
 
 export const Button = styled.button`
-  width: 120px;
-  padding: 5px;
-  font-size: 14px;
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
 
   overflow: hidden;
-  color: #333;
-  background-color: rgb(227, 227, 227);
-  border: 1px solid rgb(193, 193, 193);
+  color: #212121;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #3f51b5;
   border-radius: 4px;
-  transition: all 0.45s ease-Out;
+  transition: all 250ms ease-Out;
 
   :hover {
-    background-color: rgba(185, 183, 240, 0.8);
-    box-shadow: inset rgba(15, 7, 238, 0.4) 0px 0px 16px 2px;
+    color: white;
+    background-color: #3f51b5
+    // box-shadow: inset rgba(15, 7, 238, 0.4) 0px 0px 16px 2px;
   }
 `;
