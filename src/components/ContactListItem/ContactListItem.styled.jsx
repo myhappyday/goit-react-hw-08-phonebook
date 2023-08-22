@@ -28,19 +28,20 @@ export const Number = styled.span`
 export const Button = styled.button`
   width: 60px;
   padding: 3px;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
 
   overflow: hidden;
-  color: #333;
-  background-color: rgb(227, 227, 227);
-  border: 1px solid rgb(193, 193, 193);
+  color: #212121;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #3f51b5;
   border-radius: 4px;
-  transition: all 0.45s ease-Out;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover {
-    background-color: rgba(185, 183, 240, 0.8);
-    box-shadow: inset rgba(15, 7, 238, 0.4) 0px 0px 16px 2px;
+    background-color: #3f51b5;
+    color: white
   }
 `;

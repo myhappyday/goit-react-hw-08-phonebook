@@ -11,7 +11,7 @@ const UserMenu = () => {
   return (
     <UserContainer>
       <Avatar />
-      <UserName>Hello, {email}</UserName>
+      <UserName>{email}</UserName>
       <LogOut type="button" onClick={() => dispatch(userLogOut())}>
         Log Out
       </LogOut>
