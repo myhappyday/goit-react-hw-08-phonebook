@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contacts/operations';
 import { ContactItem, Name, Number, Button } from './ContactListItem.styled';
 
-const ContactListItem = ({ id, name, phone }) => {
+const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
     <ContactItem>
       <p>
         <Name>{name}:</Name>
-        <Number>{phone}</Number>
+        <Number>{number}</Number>
       </p>
       <Button
         type="button"
@@ -27,7 +27,7 @@ const ContactListItem = ({ id, name, phone }) => {
 ContactListItem.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
-  phone: PropTypes.string,
+  number: PropTypes.string,
 };
 
 export default ContactListItem;

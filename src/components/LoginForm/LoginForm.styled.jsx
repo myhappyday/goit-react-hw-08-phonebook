@@ -7,7 +7,7 @@ import { createTheme } from '@mui/material/styles';
 export const LoginIcon = styled(BiLogInCircle)`
   width: 50px;
   height: 50px;
-  color: #ba000d;
+  color: #3f51b5;
 `;
 
 export const InAuth = styled(Link)`
@@ -23,9 +23,9 @@ export const InAuth = styled(Link)`
 export const defaultTheme = createTheme({
   palette: {
     primary: {
-      light: '#90a4ae',
-      main: '#78909c',
-      dark: '#607d8b',
+      light: 'rgba(63, 81, 181, 0.6)',
+      main: 'rgba(63, 81, 181, 0.8)',
+      dark: 'rgba(63, 81, 181, 1)',
       contrastText: '#fff',
     },
     secondary: {

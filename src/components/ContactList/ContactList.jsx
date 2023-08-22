@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectFilteredContacts, selectIsLoading } from 'redux/contacts/selectors';
+import {
+  selectFilteredContacts,
+  selectIsLoading,
+} from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
 import ContactListItem from '../ContactListItem';
 import { List } from './ContactList.styled';
@@ -21,12 +24,12 @@ const ContactList = () => {
       {isLoading && <Loader />}
       <List>
         {contacts &&
-          contacts.map(({ id, name, phone }) => (
+          contacts.map(({ id, name, number }) => (
             <ContactListItem
               key={id}
               id={id}
               name={name}
-              phone={phone}
+              number={number}
             ></ContactListItem>
           ))}
       </List>

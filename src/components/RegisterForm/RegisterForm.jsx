@@ -11,8 +11,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import {
   Alert,
   AlertTitle,
-  Checkbox,
-  FormControlLabel,
+  // Checkbox,
+  // FormControlLabel,
   Snackbar,
 } from '@mui/material';
 
@@ -49,9 +49,9 @@ const RegisterForm = () => {
     const email = data.get('email');
     const password = data.get('password');
 
-    console.log('name:', name);
-    console.log('email:', email);
-    console.log('password:', password);
+    // console.log('name:', name);
+    // console.log('email:', email);
+    // console.log('password:', password);
 
     if (name === '' || email === '' || password === '') {
       setOpenSnackbar(true);
@@ -140,14 +140,14 @@ const RegisterForm = () => {
                 autoComplete="current-password"
               />
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
-              </Grid>
+              </Grid> */}
 
               <Button
                 type="submit"
