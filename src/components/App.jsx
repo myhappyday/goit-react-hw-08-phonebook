@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Layout from './Layout';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 import { selectToken } from 'redux/auth/selectors';
 import { refreshUser } from 'redux/auth/operations';
 
@@ -27,7 +28,14 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
-        <Route path="contacts" element={<ContactsPage />} />
+        <Route
+          path="contacts"
+          element={
+            <PrivateRoute redirectTo="/login">
+              <ContactsPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
