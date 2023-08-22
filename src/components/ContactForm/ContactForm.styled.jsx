@@ -18,8 +18,7 @@ export const Label = styled.label`
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :focus-within {
-    color: #3f51b5
-    // color: rgba(15, 7, 238, 0.8);
+    color: #3f51b5;
   }
 `;
 
@@ -28,7 +27,6 @@ export const Input = styled.input`
   height: 36px;
   font-size: 16px;
   line-height: 1.16;
-  // background-color: inherit;
   color: #3f51b5;
   margin-top: 8px;
   padding-left: 12px;
@@ -38,8 +36,7 @@ export const Input = styled.input`
 
   :focus {
     outline: transparent;
-    border: 1px solid #3f51b5
-    // box-shadow: rgba(63, 81, 181, 0.8) 0px 0px 3px 1px;
+    border: 1px solid #3f51b5;
   }
 
   :focus + label {
@@ -66,7 +63,6 @@ export const Button = styled.button`
 
   :hover {
     color: white;
-    background-color: #3f51b5
-    // box-shadow: inset rgba(15, 7, 238, 0.4) 0px 0px 16px 2px;
+    background-color: #3f51b5;
   }
 `;

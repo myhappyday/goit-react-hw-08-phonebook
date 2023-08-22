@@ -17,7 +17,6 @@ const Container = styled.div`
   background-color: rgb(243, 243, 243);
   border-radius: 4px;
   font-size: 22px;
-  // box-shadow: rgb(158, 158, 158) 0px 4px 10px 4px;
 `;
 
 const ContactsPage = () => {

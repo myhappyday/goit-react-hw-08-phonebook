@@ -4,11 +4,9 @@ import { userRegister, userLogIn, userLogOut, refreshUser } from './operations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    // userData: null,
     user: { name: null, email: null },
     token: null,
     isLogged: false,
-    // isRefreshing: false,
     isLoading: false,
     error: null,
   },
@@ -17,7 +15,6 @@ const authSlice = createSlice({
       .addCase(userRegister.pending, state => {
         state.isLoading = true;
         state.error = null;
-        // state.isLogged = false;
       })
       .addCase(userRegister.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -65,20 +62,16 @@ const authSlice = createSlice({
 
       .addCase(refreshUser.pending, state => {
         state.isLoading = true;
-        // state.isRefreshing = true;
         state.error = null;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLogged = true;
-        // state.isRefreshing = false;
-
         state.isLoading = false;
         state.error = null;
       })
       .addCase(refreshUser.rejected, (state, action) => {
         state.isLoading = false;
-        // state.isRefreshing = false;
         state.error = action.payload;
       });
   },

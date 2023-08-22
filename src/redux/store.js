@@ -16,22 +16,11 @@ import { contactsReducer } from './contacts/contactsSlice';
 import { filterReducer } from './contacts/filterSlice';
 import { authReducer } from './auth/authSlice';
 
-// import { contactsReducer } from './phonebookSlice';
-
 const authPersistConfig = {
   key: 'auth',
   storage,
   whitelist: ['token'],
 };
-
-// export const store = configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//     filter: filterReducer,
-//   },
-// });
-
-
 
 export const store = configureStore({
   reducer: {

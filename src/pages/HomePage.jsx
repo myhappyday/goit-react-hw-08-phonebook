@@ -14,17 +14,8 @@ const Image = styled.img`
   margin: 0 auto;
 `;
 
-// const Message = styled.p`
-//   margin: 0 auto;
-//   padding: 24px;
-//   text-align: center;
-//   color: #3f51b5;
-//   font-size: 26px;
-//   font-weight: 500;
-// `;
-
 const Title = styled.h2`
-  margin: 40px auto;
+  margin: 10px auto;
   text-align: center;
   color: #3f51b5;
   font-size: 32px;

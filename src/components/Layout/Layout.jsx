@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
+
 import { selectIsLogged } from 'redux/auth/selectors';
 
 import Loader from '../Loader';
@@ -48,12 +47,6 @@ const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      {/* <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        theme="colored"
-        pauseOnHover
-      /> */}
     </Container>
   );
 };
