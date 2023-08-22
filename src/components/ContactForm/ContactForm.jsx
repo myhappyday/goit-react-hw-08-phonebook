@@ -15,12 +15,12 @@ const ContactForm = () => {
 
   const onFormSubmit = event => {
     event.preventDefault();
-    const { name, phone } = event.currentTarget.elements;
+    const { name, number } = event.currentTarget.elements;
 
     const contact = {
       id: nanoid(5),
       name: name.value,
-      phone: phone.value,
+      number: number.value,
     };
 
     if (onDuplicateContact(name.value)) {
@@ -57,7 +57,7 @@ const ContactForm = () => {
         Number
         <Input
           type="tel"
-          name="phone"
+          name="number"
           pattern="^(\+?[0-9.\(\)\-\s]*)$"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
