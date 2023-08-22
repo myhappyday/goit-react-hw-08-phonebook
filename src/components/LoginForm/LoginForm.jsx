@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -11,11 +12,12 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Alert, AlertTitle, Snackbar } from '@mui/material';
 
 import { userLogIn } from 'redux/auth/operations';
-import { selectUserError } from 'redux/auth/selectors';
+import { selectUserError, selectIsLogged } from 'redux/auth/selectors';
 import { LoginIcon, InAuth, defaultTheme } from './LoginForm.styled';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
+  const authenticated = useSelector(selectIsLogged);
   const error = useSelector(selectUserError);
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
@@ -37,6 +39,8 @@ export default function LoginPage() {
     );
     event.target.reset();
   };
+
+  if (authenticated) return <Navigate to="/contacts" />;
 
   return (
     <ThemeProvider theme={defaultTheme}>

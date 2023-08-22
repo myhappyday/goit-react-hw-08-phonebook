@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -11,31 +12,17 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Alert, AlertTitle, Snackbar } from '@mui/material';
 
 import { userRegister } from 'redux/auth/operations';
-import { selectUserError } from 'redux/auth/selectors';
+import { selectUserError, selectIsLogged } from 'redux/auth/selectors';
 import { InAuth, AuthIcon, defaultTheme } from './RegisterForm.styled';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const authenticated = useSelector(selectIsLogged);
   const error = useSelector(selectUserError);
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    // const form = event.currentTarget;
-    // console.log('form: ', form);
-
-    // const name = form.elements.userName.value;
-    // const email = form.elements.userEmail.value;
-    // const password = form.elements.userPassword.value;
-
-    // dispatch(
-    //   userRegister({
-    //     name,
-    //     email,
-    //     password,
-    //   })
-    // );
 
     const data = new FormData(event.currentTarget);
 
@@ -48,8 +35,6 @@ const RegisterForm = () => {
       return;
     }
 
-    // dispatch(userRegister({ name, email, password }));
-
     dispatch(userRegister({ name, email, password })).then(
       ({ meta: { rejectedWithValue } }) => {
         if (rejectedWithValue) setOpenSnackbar(true);
@@ -57,6 +42,8 @@ const RegisterForm = () => {
     );
     event.target.reset();
   };
+
+  if (authenticated) return <Navigate to="/contacts" />;
 
   return (
     <ThemeProvider theme={defaultTheme}>
